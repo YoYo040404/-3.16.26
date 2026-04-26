@@ -3,8 +3,7 @@
 import Image from "next/image"
 import { MessageCircle, ChevronDown, CheckCircle2, Phone } from "lucide-react"
 import { useState } from "react"
-
-const WA_LINK = "https://wa.me/972000000000?text=שלום%20ג׳ריקו%2C%20שלחתי%20תמונה%20לבדיקה"
+import { getWhatsAppUrl } from "@/lib/contact"
 
 // Concept C: Conversion-first, direct, non-template
 // Light warm white bg. CTA-heavy but not cheap. Sections are short, punchy.
@@ -14,7 +13,7 @@ const WA_LINK = "https://wa.me/972000000000?text=שלום%20ג׳ריקו%2C%20ש
 function WaButton({ big = false, className = "" }: { big?: boolean; className?: string }) {
   return (
     <a
-      href={WA_LINK}
+      href={getWhatsAppUrl()}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center gap-2.5 font-sans font-bold rounded-sm transition-all hover:opacity-90 active:scale-[0.98]

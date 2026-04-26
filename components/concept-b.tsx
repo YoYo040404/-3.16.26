@@ -3,8 +3,7 @@
 import Image from "next/image"
 import { MessageCircle, ChevronDown, Phone } from "lucide-react"
 import { useState } from "react"
-
-const WA_LINK = "https://wa.me/972000000000?text=שלום%20ג׳ריקו%2C%20שלחתי%20תמונה%20לבדיקה"
+import { CONTACT, getWhatsAppUrl } from "@/lib/contact"
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Concept B: Tactile, Material, Craft-Driven
@@ -32,7 +31,7 @@ function WhatsAppCTA({ variant = "primary" }: { variant?: "primary" | "outline" 
 
   return (
     <a
-      href={WA_LINK}
+      href={getWhatsAppUrl()}
       target="_blank"
       rel="noopener noreferrer"
       className={styles}
@@ -55,18 +54,37 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col" style={{ backgroundColor: C.charcoal }}>
       {/* Nav — minimal, transparent */}
-      <header className="relative z-30 flex items-center justify-between px-6 md:px-12 py-6">
+      <header className="relative z-30 flex items-center justify-between gap-4 px-6 md:px-12 py-6">
         <div className="font-serif text-xl font-bold tracking-tight" style={{ color: C.cream }}>
           ג׳ריקו אספינוזה
         </div>
-        <a
-          href={`tel:+972000000000`}
-          className="flex items-center gap-2 font-sans text-sm font-semibold border rounded-sm px-4 py-2 transition-colors hover:bg-white/10"
-          style={{ color: C.cream, borderColor: "rgba(245,239,230,0.25)" }}
-        >
-          <Phone size={14} />
-          <span className="hidden sm:inline">צרו קשר</span>
-        </a>
+        <nav className="hidden lg:flex items-center gap-6 font-sans text-sm font-semibold" style={{ color: "rgba(245,239,230,0.8)" }}>
+          <a href="/" className="transition-opacity hover:opacity-100 opacity-80">בית</a>
+          <a href="/services" className="transition-opacity hover:opacity-100 opacity-80">שירותים</a>
+          <a href="#about" className="transition-opacity hover:opacity-100 opacity-80">עליי</a>
+          <a href="#faq" className="transition-opacity hover:opacity-100 opacity-80">שאלות</a>
+          <a href="#contact" className="transition-opacity hover:opacity-100 opacity-80">יצירת קשר</a>
+        </nav>
+        <div className="flex items-center gap-2">
+          <a
+            href={getWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-2 font-sans text-xs font-bold rounded-sm px-3 py-2 transition-colors hover:bg-[#2d5a27]/80"
+            style={{ backgroundColor: C.deepGreen, color: C.cream }}
+          >
+            <MessageCircle size={14} />
+            וואטסאפ
+          </a>
+          <a
+            href={`tel:${CONTACT.whatsappNumber}`}
+            className="flex items-center gap-2 font-sans text-sm font-semibold border rounded-sm px-4 py-2 transition-colors hover:bg-white/10"
+            style={{ color: C.cream, borderColor: "rgba(245,239,230,0.25)" }}
+          >
+            <Phone size={14} />
+            <span className="hidden sm:inline">צרו קשר</span>
+          </a>
+        </div>
       </header>
 
       {/* Hero image — full bleed with heavy gradient */}
@@ -295,7 +313,7 @@ function Solution() {
 // ═══════════════════════════════════════════════════════════════════════════════
 function About() {
   return (
-    <section style={{ backgroundColor: C.charcoal }} className="overflow-hidden">
+    <section id="about" style={{ backgroundColor: C.charcoal }} className="overflow-hidden">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12">
         {/* Portrait — full height on desktop */}
         <div className="relative h-80 sm:h-96 lg:h-auto lg:min-h-[650px] lg:col-span-5 order-1">
@@ -372,9 +390,18 @@ function Gallery() {
               העבודה בשטח מדברת
             </h2>
           </div>
-          <p className="hidden sm:block font-sans text-sm" style={{ color: C.warmGray }}>
-            תמונות מעבודות אמיתיות
-          </p>
+          <div className="text-left">
+            <a
+              href="/services"
+              className="inline-block font-sans text-sm font-bold underline underline-offset-4"
+              style={{ color: C.woodBrown }}
+            >
+              לכל השירותים
+            </a>
+            <p className="hidden sm:block font-sans text-xs mt-2" style={{ color: C.warmGray }}>
+              תמונות מעבודות אמיתיות
+            </p>
+          </div>
         </div>
 
         {/* Intro */}
@@ -575,7 +602,7 @@ function FAQ() {
   ]
 
   return (
-    <section style={{ backgroundColor: C.charcoal }} className="py-20 md:py-32 px-6 md:px-12">
+    <section id="faq" style={{ backgroundColor: C.charcoal }} className="py-20 md:py-32 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <p
           className="font-sans text-[10px] md:text-xs tracking-[0.25em] uppercase font-bold mb-6"
@@ -631,7 +658,7 @@ function FAQ() {
 // ═══════════════════════════════════════════════════════════════════════════════
 function FinalCTA() {
   return (
-    <section style={{ backgroundColor: C.parchment }} className="py-20 md:py-32">
+    <section id="contact" style={{ backgroundColor: C.parchment }} className="py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <div>

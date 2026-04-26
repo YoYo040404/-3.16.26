@@ -3,13 +3,12 @@
 import Image from "next/image"
 import { MessageCircle, ChevronDown } from "lucide-react"
 import { useState } from "react"
-
-const WA_LINK = "https://wa.me/972000000000?text=שלום%20ג׳ריקו%2C%20שלחתי%20תמונה%20לבדיקה"
+import { getWhatsAppUrl } from "@/lib/contact"
 
 function WhatsAppButton({ className = "", children }: { className?: string; children: React.ReactNode }) {
   return (
     <a
-      href={WA_LINK}
+      href={getWhatsAppUrl()}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center gap-2 bg-accent text-accent-foreground font-sans font-semibold rounded-sm px-6 py-3.5 text-base transition-all hover:opacity-90 active:scale-[0.98] ${className}`}
