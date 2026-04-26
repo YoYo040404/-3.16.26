@@ -3,8 +3,7 @@
 import Image from "next/image"
 import { MessageCircle, ChevronDown, Phone } from "lucide-react"
 import { useState } from "react"
-
-const WA_LINK = "https://wa.me/972000000000?text=שלום%20ג׳ריקו%2C%20שלחתי%20תמונה%20לבדיקה"
+import { CONTACT, getWhatsAppUrl } from "@/lib/contact"
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Concept B: Tactile, Material, Craft-Driven
@@ -32,7 +31,7 @@ function WhatsAppCTA({ variant = "primary" }: { variant?: "primary" | "outline" 
 
   return (
     <a
-      href={WA_LINK}
+      href={getWhatsAppUrl()}
       target="_blank"
       rel="noopener noreferrer"
       className={styles}
@@ -60,7 +59,7 @@ function Hero() {
           ג׳ריקו אספינוזה
         </div>
         <a
-          href={`tel:+972000000000`}
+          href={`tel:${CONTACT.whatsappNumber}`}
           className="flex items-center gap-2 font-sans text-sm font-semibold border rounded-sm px-4 py-2 transition-colors hover:bg-white/10"
           style={{ color: C.cream, borderColor: "rgba(245,239,230,0.25)" }}
         >
