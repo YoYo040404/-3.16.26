@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --font-heebo: Arial, 'Noto Sans Hebrew', 'Rubik', sans-serif;
+  --font-frank-ruhl: Georgia, 'Times New Roman', serif;
   /* Jerico Espinoza — Flooring Craftsman */
   /* Warm off-white background, near-black text, wood-brown primary, deep green CTA */
   --background: oklch(0.975 0.008 75);        /* warm off-white */
@@ -79,8 +81,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-heebo), 'Heebo', system-ui, sans-serif;
-  --font-serif: var(--font-frank-ruhl), 'Frank Ruhl Libre', Georgia, serif;
+  --font-sans: var(--font-heebo);
+  --font-serif: var(--font-frank-ruhl);
   --font-mono: monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
