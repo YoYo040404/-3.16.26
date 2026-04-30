@@ -61,7 +61,7 @@ export default function Page() {
       </div>
 
       <header className="sticky top-0 z-50 border-b border-[#dbcab3] bg-[#f7f2e9]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 md:px-6">
           <div className="font-serif text-lg font-black md:text-xl">ג׳ריקו אספינוזה</div>
           <nav className="hidden items-center gap-5 text-sm font-semibold md:flex">
             <a href="#home">בית</a>
@@ -70,7 +70,7 @@ export default function Page() {
             <a href="#faq">שאלות נפוצות</a>
             <a href="#contact">יצירת קשר</a>
           </nav>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 shrink-0">
             <a href={`tel:${CONTACT.whatsappNumber}`} className="rounded-md border border-[#8b5e3c] px-3 py-2 text-xs font-bold md:text-sm">
               התקשרו לג׳ריקו
             </a>
@@ -116,6 +116,21 @@ export default function Page() {
         <div className="rounded-xl border border-dashed border-[#bda585] bg-[#efe5d6] p-6 text-center">
           <div className="mb-4 text-sm font-semibold">[תמונה זמנית] אזור Hero</div>
           <p className="text-sm text-[#6f5540]">יחס מומלץ: 2400x1400 בדסקטופ, 1200x1600 במובייל. התמונה תוחלף בצילום עבודה אמיתי.</p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-2 md:px-6">
+        <div className="rounded-xl border border-[#dbcab3] bg-white p-6">
+          <h2 className="font-serif text-2xl font-black md:text-3xl">לא בטוחים מאיפה מתחילים?</h2>
+          <p className="mt-3 text-[#4f3b2b]">רוב הלקוחות מתחילים בשליחת תמונות. ג׳ריקו עובר על המצב, מחזיר תשובה תוך כמה שעות, ומסביר בצורה פשוטה אם צריך התקנה, תיקון או מתיחה.</p>
+          <a
+            href={getWhatsAppUrl("שלום ג׳ריקו, אשמח לכיוון ראשוני לפי תמונות.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block rounded-md border border-[#8b5e3c] px-5 py-3 font-bold"
+          >
+            שלחו תמונות וקבלו כיוון
+          </a>
         </div>
       </section>
 
@@ -178,36 +193,21 @@ export default function Page() {
         <p className="mt-3 text-sm text-[#6f5540]">לא בטוחים אם החומר מתאים? שלחו תמונות ומידע בוואטסאפ לפני תחילת העבודה.</p>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-4 px-4 py-6 md:grid-cols-2 md:px-6">
-        <article className="rounded-lg border border-[#dbcab3] bg-white p-6">
-          <h3 className="text-2xl font-bold">פרקטים</h3>
-          <p className="mt-3 text-[#4f3b2b]">התקנת פרקט רגיל, פישבון ותלת־שכבתי עם התאמות וחיתוכים וגימור נקי סביב קירות, דלתות וספים.</p>
-          <a href="/services/parquet-installation" className="mt-4 inline-block font-semibold underline">
-            לעמוד פרקטים
+      <section className="mx-auto max-w-6xl px-4 pb-4 md:px-6">
+        <div className="rounded-xl border border-[#dbcab3] bg-white p-6 text-center md:text-right">
+          <h3 className="text-2xl font-bold">צריכים עזרה להבין איזה שירות מתאים?</h3>
+          <p className="mt-3 text-sm text-[#4f3b2b] md:text-base">שלחו תמונות של השטח + עיר בוואטסאפ, וג׳ריקו יחזור תוך כמה שעות עם כיוון ברור לשלב הבא.</p>
+          <a
+            href={getWhatsAppUrl("שלום ג׳ריקו, אשמח להבין איזה שירות מתאים לי. מצרף תמונות ופרטי עיר.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-block rounded-md bg-[#2d5a27] px-5 py-3 font-bold text-[#f5efe6]"
+          >
+            בדיקה ראשונית בוואטסאפ
           </a>
-        </article>
-        <article className="rounded-lg border border-[#dbcab3] bg-white p-6">
-          <h3 className="text-2xl font-bold">תיקונים</h3>
-          <p className="mt-3 text-[#4f3b2b]">תיקוני פרקט נקודתיים בלי להחליף הכול, החלפות אזורים פגומים ושיפור גימורים קיימים.</p>
-          <a href="/services/parquet-repair" className="mt-4 inline-block font-semibold underline">
-            לעמוד תיקוני פרקט
-          </a>
-        </article>
-        <article className="rounded-lg border border-[#dbcab3] bg-white p-6">
-          <h3 className="text-2xl font-bold">שטיחים</h3>
-          <p className="mt-3 text-[#4f3b2b]">התקנה, הדבקה ומתיחה של שטיחים מקיר לקיר בשיטה מקצועית ונקייה.</p>
-          <a href="/services/wall-to-wall-carpets" className="mt-4 inline-block font-semibold underline">
-            לעמוד שטיחים
-          </a>
-        </article>
-        <article className="rounded-lg border border-[#dbcab3] bg-white p-6">
-          <h3 className="text-2xl font-bold">דקים</h3>
-          <p className="mt-3 text-[#4f3b2b]">התקנת דקים, תיקונים וחידוש דקים קיימים עם דגש על יציבות, בטיחות וגימור.</p>
-          <a href="/services/deck-installation" className="mt-4 inline-block font-semibold underline">
-            לעמוד דקים
-          </a>
-        </article>
+        </div>
       </section>
+
 
       <section className="mx-auto max-w-6xl px-4 py-14 md:px-6">
         <h2 className="font-serif text-3xl font-black">עבודות לדוגמה</h2>
